@@ -22,14 +22,14 @@ jobs:
         ports:
           - 5432:5432
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
       - name: Install PostgreSQL client
         run: |
           apt-get update
           apt-get install --yes postgresql-client
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
       - name: Query database
         run: |
           psql -d postgres://postgres:123456@localhost:5432 -c 'CREATE DATABASE app;'
