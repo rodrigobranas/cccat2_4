@@ -33,8 +33,8 @@ jobs:
           node-version: '14'
       - name: Query database
         run: |
-          psql -d postgres://postgres:123456@localhost:5432 -c 'CREATE DATABASE app;'
-          psql -d postgres://postgres:123456@localhost:5432/app < database/create.sql
+          psql -d postgres://postgres:123456@postgres:5432 -c 'CREATE DATABASE app;'
+          psql -d postgres://postgres:123456@postgres:5432/app < database/create.sql
       - name: Install dependencies
         run: npm ci
       - run: npm test
