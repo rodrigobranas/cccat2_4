@@ -9,6 +9,7 @@ on:
 jobs:
   testing:
     runs-on: ubuntu-latest
+    container: node:latest
     services:
       postgres:
         image: postgres:12-alpine
