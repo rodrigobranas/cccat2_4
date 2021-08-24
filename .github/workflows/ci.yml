@@ -38,4 +38,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm test
+        env:
+          POSTGRES_PASSWORD: 123456
+          POSTGRES_USER: postgres
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
+          POSTGRES_DATABASE: app
 
